@@ -71,11 +71,11 @@ body {
 }
 
 .logo img {
-    height: 40px;
-    width: auto;
-    background: white;
-    padding: 8px;
-    border-radius: 50%;
+    height: 60px; /* Reduced container height */
+    width: 240px; /* Wide width to zoom in */
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
 .nav-links {
@@ -116,7 +116,7 @@ body {
     background: var(--gradient);
     color: var(--white) !important;
     padding: 0.6rem 1.5rem;
-    border-radius: 50px;
+    border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -185,14 +185,12 @@ body {
 }
 
 .hero-icon {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 2rem;
-    animation: fadeInDown 1s ease;
-    background: white;
-    padding: 20px;
-    border-radius: 50%;
-    box-shadow: 0 0 40px rgba(74, 144, 226, 0.6);
+    width: 500px;
+    height: 150px; /* Fixed height to prevent pushing title */
+    margin: 0 auto 1.5rem;
+    object-fit: cover;
+    object-position: center;
+    filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.4));
 }
 
 @keyframes fadeInDown {
@@ -253,7 +251,7 @@ body {
 
 .btn {
     padding: 1rem 2.5rem;
-    border-radius: 50px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -323,7 +321,7 @@ section {
 .servico-card {
     background: var(--bg-card);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: 8px;
     border: 1px solid rgba(74, 144, 226, 0.1);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
@@ -397,7 +395,7 @@ section {
     display: inline-block;
     background: var(--gradient);
     padding: 0.5rem 1.5rem;
-    border-radius: 50px;
+    border-radius: 8px;
     font-weight: 600;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
@@ -479,7 +477,7 @@ section {
     background: #128C7E;
     color: var(--white);
     padding: 1.2rem 2rem;
-    border-radius: 50px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.05rem;
@@ -501,7 +499,7 @@ section {
 /* Chat Demo */
 .chat-demo {
     background: var(--bg-card);
-    border-radius: 20px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(74, 144, 226, 0.2);
@@ -567,7 +565,7 @@ section {
 .chat-message {
     max-width: 80%;
     padding: 1rem 1.5rem;
-    border-radius: 20px;
+    border-radius: 8px;
     animation: slideIn 0.5s ease;
 }
 
@@ -759,7 +757,7 @@ section {
     background: rgba(26, 77, 143, 0.2);
     border: 2px solid var(--accent-color);
     padding: 0.5rem 1.5rem;
-    border-radius: 50px;
+    border-radius: 8px;
     margin: 1rem 0;
     font-size: 1.1rem;
     font-weight: 600;
@@ -771,7 +769,7 @@ section {
     color: var(--accent-color);
     border: 2px solid var(--accent-color);
     padding: 0.5rem 1.2rem;
-    border-radius: 50px;
+    border-radius: 8px;
     margin: 1rem 0;
     font-size: 0.95rem;
     font-weight: 600;
@@ -899,7 +897,7 @@ section {
 .contact-form {
     background: var(--bg-card);
     padding: 3rem;
-    border-radius: 20px;
+    border-radius: 8px;
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(74, 144, 226, 0.2);
 }
@@ -959,11 +957,12 @@ section {
 }
 
 .footer-logo {
-    height: 40px;
+    height: 80px;
+    width: 280px;
     margin-bottom: 1rem;
-    background: white;
-    padding: 8px;
-    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
 .footer-section h4 {
@@ -1055,9 +1054,10 @@ section {
     }
 
     .hero-icon {
-        width: 100px;
+        width: 350px;
         height: 100px;
-        padding: 15px;
+        padding: 0;
+        object-fit: cover;
     }
 
     .hero-title {
@@ -1117,6 +1117,7 @@ section {
 
     .dimitri-features,
     .contato-features,
+    /* Adicionar animação às features principais */
     .storage-features {
         gap: 1.2rem;
     }
@@ -1177,9 +1178,10 @@ section {
     }
 
     .hero-icon {
-        width: 80px;
+        width: 250px;
         height: 80px;
-        padding: 12px;
+        padding: 0;
+        object-fit: cover;
     }
 
     .btn {
@@ -1210,8 +1212,10 @@ section {
     }
 
     .logo img {
-        height: 35px;
-        padding: 6px;
+        height: 50px;
+        width: 180px;
+        object-fit: cover;
+        padding: 0;
     }
 }
 
@@ -1262,3 +1266,61 @@ section {
     }
 }
 
+
+/* Depoimentos */
+.depoimentos {
+    background: var(--bg-dark);
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.depoimento-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(74, 144, 226, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow);
+}
+
+.stars {
+    color: #ffb800;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.depoimento-content p {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.depoimento-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-info h4 {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+}
+
+.author-info span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}

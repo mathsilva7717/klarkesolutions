@@ -61,42 +61,18 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
 // Adicionar animação aos cards de serviço
-document.querySelectorAll('.servico-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
+document.querySelectorAll('.servico-card, .feature-item, .storage-feature, .benefit-item, .depoimento-card').forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transition = 'opacity 0.8s ease';
+    observer.observe(el);
 });
 
-// Adicionar animação às features do DIMITRI
-document.querySelectorAll('.feature-item').forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateX(-30px)';
-    item.style.transition = `all 0.6s ease ${index * 0.15}s`;
-    observer.observe(item);
-});
-
-// Adicionar animação aos storage features
-document.querySelectorAll('.storage-feature').forEach((feature, index) => {
-    feature.style.opacity = '0';
-    feature.style.transform = 'translateX(-30px)';
-    feature.style.transition = `all 0.6s ease ${index * 0.1}s`;
-    observer.observe(feature);
-});
-
-// Adicionar animação aos benefit items
-document.querySelectorAll('.benefit-item').forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateX(-30px)';
-    item.style.transition = `all 0.5s ease ${index * 0.08}s`;
-    observer.observe(item);
-});
+// Efeito Mouse Parallax removido por solicitação do usuário
 
 // Animação das mensagens do chat
 const chatMessages = document.querySelectorAll('.chat-message');
@@ -212,7 +188,7 @@ contactForm.addEventListener('submit', async (e) => {
             telefone: telefone,
             interesse: interesseTexto,
             message: mensagem,
-            to_email: 'klarkesolutions@gmail.com'
+            to_email: 'contato@klarke.com.br'
         };
         
         // Enviar email usando EmailJS
@@ -316,16 +292,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Adicionar efeito parallax suave no hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero-content');
-    
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight);
-    }
-});
+// Efeito parallax de scroll removido por solicitação do usuário
 
 // Easter egg: console message
 console.log('%cKLARKE SOLUTIONS', 'font-size: 24px; font-weight: bold; color: #4a90e2;');
