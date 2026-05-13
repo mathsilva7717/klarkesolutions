@@ -4,17 +4,27 @@
 })();
 
 // Scroll suave para mobile
-const navLinks = document.querySelectorAll('.nav-links a');
+// Menu Mobile Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinksContainer = document.getElementById('navLinks');
+const navLinksItems = document.querySelectorAll('.nav-links a');
 
-navLinks.forEach(link => {
-    link.addEventListener('touchstart', function() {
-        this.style.opacity = '0.7';
-    }, { passive: true });
-    
-    link.addEventListener('touchend', function() {
-        this.style.opacity = '1';
-    }, { passive: true });
-});
+if (menuToggle && navLinksContainer) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
+        document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : '';
+    });
+
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinksContainer.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
 
 // Header scroll effect
 const header = document.querySelector('.header');
