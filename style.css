@@ -1234,7 +1234,9 @@ section {
 
     .nav-links a {
         font-size: 1rem;
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 12px;
         width: 100%;
         padding: 1.5rem;
         text-align: left;
