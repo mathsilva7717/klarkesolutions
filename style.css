@@ -95,7 +95,18 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
     padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: none !important;
 }
+
+.nav-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
 
 .nav-links a:not(.btn-contato):hover {
     color: var(--white);
@@ -125,13 +136,18 @@ body {
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
 }
 
 .btn-contato:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: var(--white);
     transform: translateY(-1px);
+    box-shadow: none !important;
 }
+
 
 
 /* Menu Toggle */
@@ -1236,6 +1252,8 @@ section {
         font-size: 1rem;
         border: 1px solid rgba(255, 255, 255, 0.2);
         background: rgba(255, 255, 255, 0.05);
+        box-shadow: none !important;
+        text-shadow: none !important;
     }
 
     .servicos-grid {
